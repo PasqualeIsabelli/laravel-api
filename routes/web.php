@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GuestController::class, 'index'])->name('guests.welcome');
+Route::get('/', function () {
+    return redirect('http://localhost:5174/');
+});
 
 /*
 Route::get('/', function () {
