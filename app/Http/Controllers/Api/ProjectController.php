@@ -17,6 +17,11 @@ class ProjectController extends Controller
         $projects = Project::where('slug', $slug)
             ->with(['type', 'technologies'])
             ->first();
+
+        if (!$projects) {
+            abort(404);
+        }
+
         return response()->json($projects);
     }
 }
